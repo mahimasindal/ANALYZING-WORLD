@@ -1,0 +1,31 @@
+from tkinter import *
+from PIL import ImageTk,Image
+import tkinter.messagebox
+import sys
+root=Tk()
+root.geometry('800x600+0+0')
+root.title('Blood Management Software')
+root.config(bg='Dark Red')
+root.resizable(0,0)
+
+def home():
+    f=Frame(root,width=800,height=600,bg='dark blue')
+    img=ImageTk.PhotoImage(Image.open('project3.jpg'))
+    l=Label(f,image=img,width=800,height=600)
+    l.place(x=0,y=0)
+    f.pack()
+    l0=Label(f,text='ANALYZING WORLD',width=30,height=2,bg='black',font=('arial',19,'bold'),fg='white')
+    l0.place(x=150,y=0)
+    l1=Label(f,text='YOUR FILE PATH',height=2,width=30,bg='black',fg='white',font=('arial',14,'bold'))
+    l1.place(x=200,y=100)
+    e1=Entry(width=60)
+    e1.place(x=200,y=200)
+    b0=Button(f,text='OPEN')
+    b0.place(x=210,y=300)
+    b1=Button(f,text='RESET',command=lambda:home())
+    b1.place(x=360,y=300)
+    b2=Button(f,text='EXIT',command=lambda:root.destroy())
+    b2.place(x=510,y=300)
+    root.mainloop()
+home()
+
